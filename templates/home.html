@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <title>Safer Cycling</title>
+  </head>
+  <body>
+    <div class="container-fluid">
+        <h1 class="text-center">Safer Cycling</h1>
+        <div class="row" style="height:95vh;width:95vw">
+            <div class="col-md-8" >
+                <iframe src="/map_first_load" height = "100%" width = "100%" id="mapFrame"></iframe>
+            </div>
+            <div class="col-md-4" >
+                <h3>Start</h3>
+                <div class="form-group form-inline">  
+                    <input type="text" class="form-control input-lg" id="startInput" value="51.517632, -0.120393">
+                </div>
+                <br>
+                <h3>End</h3>
+                <div class="form-group form-inline">  
+                    <input type="text" class="form-control input-lg" id="endInput" value="51.530844, -0.122462">
+                </div>
+                <br>
+                <button id="searchRoutes" onclick="searchRoutes()">Search Routes</button>
+                <br><br>
+                <p>
+                    Safer Cycling is a platform where you can define a start
+                    point and an end point (using latitude and longitude) for
+                    your cycling journey. The platform will then calculate and
+                    plot up to three different routes for you to use.
+                </p>
+                <p>
+                    Each route will be colour-coded according to how dangerous
+                    it is compared to other routes, with red being the most
+                    dangerous and green being the least dangerous.
+                </p>
+                <p>
+                    The danger level of a route is determined by the number of
+                    accidents that have taken place along the route, as well as
+                    their severity.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function searchRoutes() {
+            const startArray = document.getElementById('startInput').value.split(",").map(item => item.trim());
+            const endArray = document.getElementById('endInput').value.split(",").map(item => item.trim());
+            $.when($.ajax({url: "/set_session_variables", data: {"start0": startArray[1], "start1": startArray[0], "end0": endArray[1], "end1": endArray[0]}})).done(function(){
+                document.getElementById("mapFrame").src = "/update_map";
+            });
+        }
+    </script>
+  </body>
+</html>
