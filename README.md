@@ -12,6 +12,8 @@ color-coded based on how dangerous it is. The danger level of a route is
 determined by the number of accidents that have taken place along the route, as
 well as their severity.
 
+![](https://github.com/Meezeus/safer-cycling/blob/425ffc54c45b7709129fbecef0da128635f1a21c/safer-cycling-website.png?raw=true)
+
 ## How to use
 
 To use the application, first clone the repo. Make sure you have Python <=3.10
