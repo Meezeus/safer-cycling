@@ -1,11 +1,11 @@
 # Safer Cycling
 
-This application was created for HackKing’s 2022: a 12 hour hackathon organised
-by KCL Tech and sponsored by BlackRock. Working as a team of 5, we had to create
+This application was created for **HackKing’s 2022**: a 12 hour hackathon organised
+by **KCL Tech** and sponsored by **BlackRock**. Working as a team of 5, we had to create
 a product to answer the challenge statement: _“How can we take advantage of the
 changing technological landscape to contribute to a better future”_.
 
-Our solution is a website that **allows users to find safe cycling routes** in
+Our solution is a website that allows users to find safe cycling routes in
 London. Users provide latitude and longitude coordinates of a start and end
 location. The application will then display up to three routes, each one
 color-coded based on how dangerous it is. The danger level of a route is
