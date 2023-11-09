@@ -16,8 +16,9 @@ well as their severity.
 
 ## How to use
 
-To use the application, first clone the repo. Make sure you have Python <=3.10
-and install the following dependencies using your favourite package manager:
+To use the application, first clone the repo. Make sure you have
+[Python](https://www.python.org/) >=3.10 and install the following dependencies
+using your favourite package manager:
 
 - [Flask](https://flask.palletsprojects.com/en/3.0.x/)
 - [Folium](https://pypi.org/project/folium/)
