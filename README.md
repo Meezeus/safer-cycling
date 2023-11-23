@@ -14,7 +14,7 @@ well as their severity.
 
 ![](https://github.com/Meezeus/safer-cycling/blob/425ffc54c45b7709129fbecef0da128635f1a21c/safer-cycling-website.png?raw=true)
 
-## How to use
+## Installation / Usage
 
 To use the application, first clone the repo. Make sure you have
 [Python](https://www.python.org/) >=3.10 and install the following dependencies
